@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./index.js" defer></script>
+
+
+  <title>Todo app</title>
+
+</head>
+
+<body class="">
+  <main>
+    <div class="todo-text">
+      <h1>todo</h1>
+      <div class="container">
+        <img src="./images/icon-moon.svg" alt="icon-moon" class="switch-theme">
+      </div>
+    </div>
+
+    <div class="container-input">
+      <button class="add-task"></button>
+      <input type="text" name="text" id="text" class="" placeholder="Currently typing">
+    </div>
+    <!-- <input type="text" name="text" id="text" class="" placeholder="Currently typing"> -->
+
+
+    <article class="container-list">
+      <ul class="warpper">
+      </ul>
+      <div class="status-tasks">
+        <p><span class="number-task"></span> items left</p>
+
+        <div class="filters options">
+          <label>
+            <input type="radio" name="filter" id="all" checked />
+            <span>All</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" id="active" />
+            <span>Active</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" id="completed" />
+            <span>Completed</span>
+          </label>
+        </div>
+        <p class="clear">Clear Completed</p>
+
+      </div>
+    </article>
+
+  </main>
+</body>
+
+</html>

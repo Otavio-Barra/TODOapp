@@ -1,0 +1,219 @@
+@import "./components/colors.scss";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url(../images/bg-desktop-light.jpg);
+  background-color: $Very-Light-Gray;
+  display: flex;
+
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+.dark {
+  transition: all 0.5s ease-in-out;
+}
+body.dark {
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-color: $Very-Dark-Blue;
+}
+
+main {
+  width: 45rem;
+  text-align: center;
+  margin-top: 10vw;
+}
+
+.container-input {
+  display: flex;
+  position: relative;
+
+  .add-task {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 1px solid #000;
+    position: absolute;
+    top: 1.8rem;
+    left: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .add-task.dark {
+    border: 1px solid #fff;
+  }
+}
+
+.todo-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 1rem;
+  }
+  .container {
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+}
+#text {
+  width: 100%;
+  outline: none;
+  padding: 2rem 5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  border: 0.5px solid #00000030;
+  color: #000;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+#text::placeholder {
+  font-size: 1.5rem;
+}
+
+#text.dark {
+  border: 0.5px solid #ffffff30;
+  color: #fff;
+  background-color: $Very-Dark-Desaturated-Blue;
+}
+
+.container-list {
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  -webkit-box-shadow: 2.5px 7px 5px 2.5px #00000030;
+  -moz-box-shadow: 2.5px 7px 5px 2.5px #00000030;
+  box-shadow: 2.5px 7px 5px 2.5px #00000030;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 2rem;
+  .warpper {
+    width: 100%;
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 0.5px solid #00000054;
+      padding: 1.5rem;
+
+      div {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        p {
+          font-size: 1.5rem;
+        }
+        input {
+          -webkit-appearance: none;
+          border: 1px solid hsl(234, 11%, 52%);
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+        input:checked {
+          background: url("../images/icon-check.svg"),
+            linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+          background-repeat: no-repeat;
+          background-position: center;
+          border: none;
+        }
+        input:checked ~ p {
+          text-decoration: line-through;
+          color: hsl(234, 11%, 52%);
+        }
+      }
+      img {
+        opacity: 0;
+        transition: all 0.2s ease;
+      }
+    }
+    .task.hidden {
+      display: none;
+    }
+  }
+
+  .task:hover {
+    img {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  .status-tasks {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem;
+    align-items: center;
+
+    p,
+    span {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.container-list.dark {
+  background-color: $Very-Dark-Desaturated-Blue;
+  color: #fff;
+  .task {
+    border-bottom: 0.5px solid #ffffff54;
+  }
+}
+.options {
+  display: flex;
+  gap: 1rem;
+  p {
+    opacity: 0.6;
+    transition: all 0.5s ease;
+  }
+}
+.filters input[type="radio"] {
+  opacity: 0;
+}
+.options {
+  p:hover {
+    opacity: 1;
+  }
+}
+.options {
+  p.select {
+    opacity: 1;
+    color: $Check-Background;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: url(../images/bg-mobile-light.jpg);
+  }
+  body.dark {
+    background-image: url(../images/bg-mobile-dark.jpg);
+  }
+  main {
+    width: 34rem;
+    text-align: center;
+    margin-top: 10vw;
+    .alert {
+      font-size: 1.5rem;
+      opacity: 0.5;
+    }
+  }
+}
